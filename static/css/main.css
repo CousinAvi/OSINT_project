@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Taviraj:300,400,700,300i,400i,700i");
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family:'Poppins', sans-serif;
+  color: #222;
+
+}
+
+.navbar-brad img {width: 150px;height: 50px}
+
+
+
+.navbar-nav li {
+  padding-right: 30px;
+}
+
+.nav-link {font-size: 1.1em !important}
+
+.social a {
+  font-size: 4em;
+  padding: 10px;
+}
+.round {
+    border-radius: 100px; /* Радиус скругления */
+
+   }
+.center-cropped {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-position: center center;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.center-cropped2 {
+  width: 275px;
+  height: 275px;
+  margin: 10px;
+
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Set the image to fill its parent and make transparent */
+.carsearch {
+  padding-right: 10px;
+}
+
+figcaption {
+    text-align: center; /* Выравниваем по центру */
+   }
+
+.preloader {
+  /*фиксированное позиционирование*/
+  position: fixed;
+  /* координаты положения */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* фоновый цвет элемента */
+  background: #e0e0e0;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 4s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #337ab7;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 4s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -2s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+
+.adv {
+text-align: center;
+padding-top: 0px;
+padding-bottom: 0px;
+}
+.adv img:hover{
+padding-top: 0px;
+padding-bottom: 0px;
+opacity:0.7;
+-moz-opacity:0.7;
+filter: alpha(opacity=80) black;
+-khtml-opacity: 0.8;
+background-color:#000;
+-webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+}
+
+.adv img {
+opacity:1;
+-moz-opacity:1;
+filter: alpha(opacity=100) black;
+-khtml-opacity: 1;
+background-color:#000;
+}
+
+###############################
+
+P.figuregif {
+ text-align: center; /* Выравнивание по центру */
+}
+
+body, html {
+  height: 100%;
+  width: auto;
+}
+
+.bg {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/firtphoto.jpg");
+  overflow: hidden;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.info {
+  padding-top: 10%;
+  padding-left: 10%;
+}
+.bg_domen {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/network.jpg");
+  /* Full height */
+  height: auto;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body, html {
+  height: 100%;
+  width: auto;
+  overflow-x: hidden;
+}
+.bg_vk {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/back2.jpg");
+  overflow-x: hidden;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.footer_vk {
+
+  overflow-x: hidden;
+  /* Full height */
+
+}
+
+.bg_crypto {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/bit5.jpg");
+  overflow-x: hidden;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg_ogrn {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/indust.jpg");
+  overflow-x: hidden;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg_nick {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/cave.jpg");
+  overflow-x: hidden;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg_searchphoto {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/newwhite.jpg");
+  overflow-x: hidden;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg_car {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/whiteback.jpg");
+  overflow-x: hidden;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.account a {
+  margin-left: 42px; /* Выравниваем по центру */
+
+}
+
+.bg_team {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/okosee.png");
+  overflow: hidden;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+
+.bg_chain {
+  /* The image used */
+  /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
+  background-image: url("../img/chainback.jpg");
+  overflow-x: hidden;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

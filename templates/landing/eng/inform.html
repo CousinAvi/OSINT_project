@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom shadow-sm">
+	<div class="container-fluid">
+		<a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a href="{% url 'landing' %}" class="nav-link text-center">Main page</a>
+				</li>
+				<li class="nav-item active">
+					<a href="{% url 'team_eng' %}" class="nav-link text-center">Team</a>
+				</li>
+
+				<li class="nav-item active">
+					<a href="{% url 'post_edit_eng' %}" class="nav-link text-center">Feedback</a>
+				</li>
+
+
+			</ul>
+		</div>
+	</nav>
+<div class="container col-12 text-center mt-4 mb-2">
+  <div class = "row">
+    <div class = "col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-1">
+      <div class = "text-justify">
+        <div class="text-center">
+            <h1>About project</h1>
+        </div>
+      <div class="mt-5">
+  <p>Open-source intelligence (OSINT) - literally "open source intelligence" is the official name used by US intelligence agencies for one type of intelligence. This intelligence consists in monitoring open sources, collecting information and processing it on the Internet, which has become the main of open sources of data for OSINT, information is collected from sites, forums, torrent trackers, IRC channels.
+  OSINT has been used both in the private sector and in military and intelligence services for many years, approaches and sources of information have been selected and streamlined by specialists from Langley (the headquarters of the main US intelligence organization is located there).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock%}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="bg_ogrn" id = "test2">
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="{% url 'rus' %}" class="nav-link text-center">Главная</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'inform' %}" class="nav-link text-center">О проекте</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'team' %}" class="nav-link text-center">Команда</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'contact' %}" class="nav-link text-center">Обратная связь</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  <div clas="container mt-5">
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <h1>Информация об организации</h1>
+      </div>
+      <div class="main col-10 col-sm-10 col-md-5 col-lg-4 col-xl-4 offset-1">
+        <form action="" method="POST">
+          <div id = "test3">
+          {% csrf_token %}
+          {{ form.name }}
+          </div>
+
+          <input type="submit" name="send" value="Узнать" class="mt-2 btn btn-primary">
+
+        </form>
+      </div>
+      <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5 offset-1 mt-5">
+          <div class="d-none d-md-block">
+            <div class="text-justify border  pb-3  pt-3 pl-3 pr-3">
+              <b>Идея модуля:</b> <p3>получение данных об организации</p3><br>
+              <b></b><br>
+              <b >Описание модуля:</b><p3> данный модуль реализует функционал поиска основных юридических данных
+              об организации из открытых источников. Он может быть полезен для получения первичной ифнормации о юридическом лице,
+              а так же его руководителе или юридическом адресе.</p3><br>
+            </div>
+
+          </div>
+      </div>
+		</div>
+  </div>
+
+  <div class="row">
+		<div class="col-10 mt-5 offset-1">
+			<h1>Найденная информация</h1>
+
+			<table class="table table-responsive mt-5">
+<thead>
+	<tr>
+		<th scope="col text-center">Название</th>
+		<th scope="col text-center">Статус</th>
+		<th scope="col text-center">ИНН</th>
+		<th scope="col text-center">Руководитель</th>
+		<th scope="col text-center">Регистрация</th>
+		<th scope="col text-center">Адрес</th>
+	</tr>
+</thead>
+<tbody>
+	{% for part in all_info %}
+            <tr>
+              <td> {{part.название}}  </td>
+              <td> {{part.статус}}  </td>
+              <td> {{part.инн}}  </td>
+              <td> {{part.руководитель}}  </td>
+              <td> {{part.регистрация}}  </td>
+              <td> {{part.адрес}}  </td>
+            </tr>
+            {% endfor %}
+</tbody>
+</table>
+
+
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

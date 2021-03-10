@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<script type="text/javascript">//<![CDATA[
+function myFunction2() {
+	var timerBlock = $('.seconds');
+var num = 8; //количество секунд
+
+var index = num;
+var timerId = setInterval(function() {
+timerBlock.html(--index);
+}, 1000);
+
+setTimeout(function() {
+clearInterval(timerId);
+$('#timerBlock').html('<p>Uploading data...</p>')
+}, num*1000);
+}
+
+	//]]></script>
+
+
+<script>
+
+function myFunction() {
+
+  if (document.querySelector("input[name='formovka']").value != '') {
+    setTimeout(function(){
+      $('#test').hide();
+      $('#test2').hide();
+      $('#test3').hide();
+      $('#test4').hide();
+      $('#gif').show();
+    },1500);
+}
+}
+</script>
+<div style="display: none;text-align: center;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)" id="gif">
+  <img src="{% static 'img/phone.gif' %}"/>
+  <div id="timerBlock">
+        <p>Wait <span class="seconds"></span> seconds</p>
+    </div>
+</div>
+<div class="bg_nick" id = "test2">
+  <nav class="navbar navbar-expand-md navbar-light sticky-top border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon">
+					<i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+				</span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="{% url 'landing' %}" class="nav-link text-center text-white">Main page</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'inform_eng' %}" class="nav-link text-center text-white">Project</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'team_eng' %}" class="nav-link text-center text-white">Team</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'post_edit_eng' %}" class="nav-link text-center text-white">Feedback</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  <div clas="container mt-5">
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <h1 class="text-white">Information about nickname/email</h1>
+      </div>
+      <div class="main col-10 col-sm-10 col-md-5 col-lg-4 col-xl-4 offset-1">
+        <form action="" method="POST">
+          <div id = "test3">
+          {% csrf_token %}
+          {{ form.formovka }}
+          </div>
+
+          <input type="submit" name="send" value="Search" class="mt-2 btn btn-outline-light btn-lg" onclick="myFunction();myFunction2()" id = "test">
+
+        </form>
+      </div>
+      <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5 offset-1 mt-5">
+          <div class="d-none d-md-block">
+            <div class="text-justify border  pb-3  pt-3 pl-3 pr-3">
+              <b class="text-white">Main idea:</b> <p3 class="text-white">obtaining data on the use of nicknames and mailing addresses on popular sites.</p3><br>
+              <b></b><br>
+              <b class="text-white">Module description:</b><p3 class="text-white">
+this module provides information on whether the entered name or nickname is used on popular sites.
+  The module can be useful, for example, when choosing a new nickname on the network. It is important to note that if there is a search by nicknames, then it should not consist only of numbers</p3><br>
+            </div>
+
+          </div>
+      </div>
+		</div>
+  </div>
+
+  <div class="col-10 col-sm-10 col-md-5 col-lg-4 col-xl-10 mt-1 offset-1">
+    <div class="text-white">
+      {% for key, value in info.items %}
+      <b>{{key}}:</b> {{value}} <br>
+      {% endfor %}
+
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

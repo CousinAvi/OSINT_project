@@ -1,0 +1,83 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="bg_searchphoto" >
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom shadow-sm">
+	<div class="container-fluid">
+		<a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a href="{% url 'landing' %}" class="nav-link text-center">Main page</a>
+				</li>
+				<li class="nav-item active">
+					<a href="{% url 'inform_eng' %}" class="nav-link text-center">Project</a>
+				</li>
+
+				<li class="nav-item active">
+					<a href="{% url 'post_edit_eng' %}" class="nav-link text-center">Feedback</a>
+				</li>
+
+
+			</ul>
+		</div>
+	</nav>
+<section class="py-12" id="pages">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-12 mt-3 col-lg-12 col-xl-12 text-center">
+
+					<!-- Heading -->
+					<h2 class="mb-5">Choose a search method</h2>
+					<!-- Subheading -->
+
+
+				</div>
+			</div>
+
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+
+					<a class="card border-0 mb-4" href="{% url 'biometry_url_eng' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top " src="{% static 'img/url_eng.png' %}" alt="...">
+						</div>
+						<!-- Body -->
+
+
+					</a>
+
+				</div>
+
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+					<a class="card border-0 mb-4" href="{% url 'biometry_local_eng' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top shadow shadow-hover lift" src="{% static 'img/local_eng.png' %}" alt="...">
+						</div>
+
+
+
+						<!-- Body -->
+
+
+					</a>
+				</div>
+
+
+
+		</div>
+	</section>
+</div>
+{% endblock%}

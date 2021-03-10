@@ -1,0 +1,183 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom shadow-sm">
+	<div class="container-fluid">
+		<a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a href="{% url 'landing' %}" class="nav-link text-center">Main page</a>
+				</li>
+				<li class="nav-item active">
+					<a href="{% url 'inform' %}" class="nav-link text-center">Project</a>
+				</li>
+
+				<li class="nav-item active">
+					<a href="{% url 'contact' %}" class="nav-link text-center">Feedback</a>
+				</li>
+				<li class="nav-item active">
+					<a href="{% url 'rus' %}" class="nav-link text-center">rus</a>
+				</li>
+
+			</ul>
+		</div>
+	</nav>
+<section class="py-12" id="pages">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-12 mt-3 col-lg-12 col-xl-12 text-center">
+
+					<!-- Heading -->
+					<h2 class="mb-5">What information do you have?</h2>
+					<!-- Subheading -->
+
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+
+					<a class="card border-0 mb-4" href="{% url 'number' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top " src="{% static 'img/eng/phone.png' %}" alt="...">
+						</div>
+						<!-- Body -->
+
+
+					</a>
+
+				</div>
+
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+					<a class="card border-0 mb-4" href="{% url 'domen' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top shadow shadow-hover lift" src="{% static 'img/eng/third.png' %}" alt="...">
+						</div>
+
+
+
+						<!-- Body -->
+
+
+					</a>
+				</div>
+
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+					<a class="card border-0 mb-4" href="{% url 'bonds' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top shadow shadow-hover lift" src="{% static 'img/eng/bonds.png' %}" alt="...">
+						</div>
+						<!-- Body -->
+
+
+					</a>
+
+				</div>
+
+
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+					<a class="card border-0 mb-4" href="{% url 'car_search' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top shadow shadow-hover lift" src="{% static 'img/car.png' %}" alt="...">
+						</div>
+						<!-- Body -->
+
+
+					</a>
+
+				</div>
+
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+					<a class="card border-0 mb-4" href="{% url 'crypto' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top shadow shadow-hover lift" src="{% static 'img/eng/bitcoin.png' %}" alt="...">
+						</div>
+
+
+					</a>
+
+				</div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+					<a class="card border-0 mb-4" href="{% url 'biometry' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top shadow shadow-hover lift" src="{% static 'img/eng/biometrics.png' %}" alt="...">
+						</div>
+						<!-- Body -->
+
+
+					</a>
+
+				</div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+					<a class="card border-0 mb-4" href="{% url 'org_info' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top shadow shadow-hover lift" src="{% static 'img/eng/organiz.png' %}" alt="...">
+						</div>
+						<!-- Body -->
+
+
+					</a>
+
+				</div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+
+					<!-- Card -->
+					<a class="card border-0 mb-4" href="{% url 'nickname_search' %}">
+
+						<!-- Image -->
+						<div class="adv">
+						<img class="card-img-top shadow shadow-hover lift" src="{% static 'img/eng/nick.png' %}" alt="...">
+						</div>
+						<!-- Body -->
+
+
+					</a>
+
+				</div>
+
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+				<h2 class = 'text-secondary' >Contact</h2>
+				<p>Your opinion is very important for us, help us become better! Please write your review, suggestion or wish.</p>
+				<p><a class="btn btn-primary" href="{% url 'post_edit' %}" role="button">Feedback »</a></p>
+			</div>
+			</div>
+
+
+		</div>
+	</section>
+
+{% endblock%}

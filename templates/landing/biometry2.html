@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="bg_searchphoto" >
+  <nav class="navbar navbar-expand-md navbar-light sticky-top border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="{% url 'rus' %}" class="nav-link text-center">Главная</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'inform' %}" class="nav-link text-center">О проекте</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'team' %}" class="nav-link text-center">Команда</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'contact' %}" class="nav-link text-center">Обратная связь</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  <div clas="container mt-5">
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <h1 class="">Поиск по изображению</h1>
+      </div>
+      <div class="main col-10 col-sm-10 col-md-5 col-lg-4 col-xl-4 offset-1 mt-4">
+        <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.url }}
+          {{ form.photo }}
+          <input type="submit" name="send" value="Загрузить фото" class="mt-2 btn btn-danger">
+        </form>
+      </div>
+      <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5 offset-1 mt-4">
+          <div class="d-none d-md-block">
+            <div class="text-justify text-dark border  pb-3  pt-3 pl-3 pr-3">
+              <b class="">Идея модуля:</b> <p3 class="">поиск человека по аватарке соцсетей</p3><br>
+              <b></b><br>
+              <b class="">Описание модуля:</b><p3 class=""> Добавить описание</p3><br>
+            </div>
+
+          </div>
+      </div>
+		</div>
+  </div>
+
+
+    <div class="row offset-1 mt-4 mb-4">
+    {% for part in link_info %}
+    <div class="col-10 col-sm-10 col-md-5 col-lg-auto col-xl-auto mb-2">
+      <p><img src="{{part.face}}" alt="" class="round"></p>
+      <figcaption><a href={{part.profile}} target="_blank" >{{part.first_name}} {{part.last_name}}</a></figcaption>
+      <figcaption><p2>{{part.country}} {{part.city}}</p2></figcaption>
+      <figcaption><p2>{{part.score}}</p2></figcaption>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

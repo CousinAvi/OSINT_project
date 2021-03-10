@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="bg_ogrn" id = "test2">
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="{% url 'landing' %}" class="nav-link text-center">Main page</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'inform_eng' %}" class="nav-link text-center">Project</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'team_eng' %}" class="nav-link text-center">Team</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'post_edit_eng' %}" class="nav-link text-center">Feedback</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  <div clas="container mt-5">
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <h1>Information about organization</h1>
+      </div>
+      <div class="main col-10 col-sm-10 col-md-5 col-lg-4 col-xl-4 offset-1">
+        <form action="" method="POST">
+          <div id = "test3">
+          {% csrf_token %}
+          {{ form.name }}
+          </div>
+
+          <input type="submit" name="send" value="Search" class="mt-2 btn btn-primary">
+
+        </form>
+      </div>
+      <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5 offset-1 mt-5">
+          <div class="d-none d-md-block">
+            <div class="text-justify border  pb-3  pt-3 pl-3 pr-3">
+              <b>Main idea:</b> <p3>receiving data about the organization</p3><br>
+              <b></b><br>
+              <b >Module description:</b><p3>
+this module implements the functionality of the search for basic legal data
+              About an organization from open sources. It can be useful for getting primary information about a legal entity,
+              as well as his manager or legal address.</p3><br>
+            </div>
+
+          </div>
+      </div>
+		</div>
+  </div>
+
+  <div class="row">
+		<div class="col-9 mt-5 offset-1">
+			<h1>Information</h1>
+
+			<table class="table table-responsive mt-5">
+<thead>
+	<tr>
+		<th scope="col text-center">Name</th>
+		<th scope="col text-center">Statusс</th>
+		<th scope="col text-center">TIN</th>
+		<th scope="col text-center">Head</th>
+		<th scope="col text-center">Registration</th>
+		<th scope="col text-center">Address</th>
+	</tr>
+</thead>
+<tbody>
+	{% for part in all_info %}
+            <tr>
+              <td> {{part.название}}  </td>
+              <td> {{part.статус}}  </td>
+              <td> {{part.инн}}  </td>
+              <td> {{part.руководитель}}  </td>
+              <td> {{part.регистрация}}  </td>
+              <td> {{part.адрес}}  </td>
+            </tr>
+            {% endfor %}
+</tbody>
+</table>
+
+
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

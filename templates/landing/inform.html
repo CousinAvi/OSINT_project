@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom shadow-sm">
+	<div class="container-fluid">
+		<a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a href="{% url 'rus' %}" class="nav-link text-center">Главная</a>
+				</li>
+				<li class="nav-item active">
+					<a href="{% url 'inform' %}" class="nav-link text-center">О проекте</a>
+				</li>
+
+				<li class="nav-item active">
+					<a href="{% url 'contact' %}" class="nav-link text-center">Обратная связь</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</nav>
+<div class="container col-12 text-center mt-4 mb-2">
+  <div class = "row">
+    <div class = "col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-1">
+      <div class = "text-justify">
+        <div class="text-center">
+            <h1>О проекте</h1>
+        </div>
+      <div class="mt-5">
+  <p>Open-source intelligence (OSINT) - дословно «разведка из открытых источников» это официальное наименование, используемое разведывательными органами США, для одного из видов разведки. Разведка эта состоит в мониторинге открытых источников, сборе информации и ее обработке в Интернете, который стал основным из открытых источников данных для OSINT, сбор информации осуществляется с сайтов, форумов, torrent трекеров, IRC-каналов.
+  OSINT используется как в частном секторе, так и в военных и разведывательных службах в течении многих лет, подходы и источники информации были отобраны и упорядочены специалистами из Лэнгли (там находится штаб-квартира главной американской разведывательной организации).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock%}

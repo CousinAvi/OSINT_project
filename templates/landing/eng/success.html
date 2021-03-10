@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom shadow-sm">
+	<div class="container-fluid">
+		<a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a href="{% url 'landing' %}" class="nav-link text-center">Main page</a>
+				</li>
+				<li class="nav-item active">
+					<a href="{% url 'inform' %}" class="nav-link text-center">Project</a>
+				</li>
+				<li class="nav-item active">
+					<a href="{% url 'team' %}" class="nav-link text-center">Team</a>
+				</li>
+				<li class="nav-item active">
+					<a href="{% url 'contact' %}" class="nav-link text-center">Feedback</a>
+				</li>
+
+			</ul>
+		</div>
+	</nav>
+<div style="text-align: center;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)" id="gif">
+
+    <h1 class = 'text-primary'>Thank you!</h1>
+
+</div>
+
+
+
+{% endblock %}

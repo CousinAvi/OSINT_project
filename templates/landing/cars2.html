@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<script type="text/javascript">//<![CDATA[
+function myFunction2() {
+	var timerBlock = $('.seconds');
+var num = 15; //количество секунд
+
+var index = num;
+var timerId = setInterval(function() {
+timerBlock.html(--index);
+}, 1000);
+
+setTimeout(function() {
+clearInterval(timerId);
+$('#timerBlock').html('<p>Загружаю результат...</p>')
+}, num*1000);
+}
+
+	//]]></script>
+
+
+<script>
+
+function myFunction() {
+  if (document.querySelector("input[name='formovka']").value != '') {
+
+    setTimeout(function(){
+      $('#test').hide();
+      $('#test2').hide();
+      $('#test3').hide();
+      $('#test4').hide();
+      $('#test5').hide();
+      $('#test6').hide();
+      $('#gif').show();
+    },1500);
+
+
+}
+}
+
+</script>
+
+<div style="display: none;text-align: center;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)" id="gif">
+    <img src="{% static 'img/car.gif' %}"/>
+    <div id="timerBlock">
+          <p>Ожидайте <span class="seconds"></span> секунд</p>
+      </div>
+</div>
+
+<div class="bg_car" id = "test2">
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="{% url 'rus' %}" class="nav-link text-center">Главная</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'inform' %}" class="nav-link text-center">О проекте</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'team' %}" class="nav-link text-center">Команда</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'contact' %}" class="nav-link text-center">Обратная связь</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  <div clas="container mt-5">
+    <div class="row">
+      <div class="col-9 offset-1 mt-5" id = "test2">
+        <h1>Поиск автомобиля</h1>
+      </div>
+      <div class="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 offset-1">
+        <form action="" method="POST">
+          <div id = "test3">
+          {% csrf_token %}
+          {{ form.formovka }}
+          </div>
+          <input type="submit" name="send" value="Узнать" class="mt-2 btn btn-danger" onclick="myFunction(); myFunction2()" id = "test">
+        </form>
+      </div>
+      <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-4 offset-1 mt-2" id = "test5">
+          <div class="d-none d-md-block">
+            <div class="text-justify">
+              <b>Идея модуля:</b> получение данных об автомобиле по его госномеру<br>
+              <b></b><br>
+              <b>Описание модуля:</b> Данный модуль реализует функционал поиска данных
+              об автомобиле из открытых источников. Более того становится
+              возможным проверить использовался ли один номер несколькими автомобилями или как менялся
+              внешний вид автомобиля с этим номером.<br>
+            </div>
+          </div>
+          </div>
+		</div>
+	</div>
+
+  <img src="https://s.nomerogram.ru/photo/nCm8Xh-tza7mxsTYIQvS3vfojg-4COwJuXqf4Vr4BTIDQWLeX80yyLH3wxzng7qbqkrEVFB-nq0uoBejhAMY.jpg" alt="">
+  <iframe src="https://s.nomerogram.ru/photo/nCm8Xh-tza7mxsTYIQvS3vfojg-4COwJuXqf4Vr4BTIDQWLeX80yyLH3wxzng7qbqkrEVFB-nq0uoBejhAMY.jpg">   </iframe>
+<div id="test6">
+  <div class="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 {{info.color}} mt-5 offset-1 text-center">
+    <h1>{{info.connect}} </h1>
+  </div>
+<div class="container col-12">
+
+    <div class="row">
+
+		<div class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-6 offset-1 mt-2">
+            {% for part in info.bond %}
+            <div class="carsearch mt-3">
+            <a  class="mt-4" href= {{part.link}} target="_blank" >{{part.info}}</a>
+            </div>
+            {% endfor %}
+    	</div>
+    </div>
+  </div>
+ </div>
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="bg_vk" >
+  <nav class="navbar navbar-expand-md navbar-light sticky-top border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="{% url 'landing' %}" class="nav-link text-center">Main page</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'inform_eng' %}" class="nav-link text-center">Project</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'team_eng' %}" class="nav-link text-center">Team</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'post_edit_eng' %}" class="nav-link text-center">Feedback</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  <div clas="container mt-5">
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <h1 class="">Bonds Vkontakte</h1>
+      </div>
+      <div class="main col-10 col-sm-10 col-md-5 col-lg-4 col-xl-4 offset-1 mt-4">
+        <form action="" method="POST">
+          <div id = "test3">
+          {% csrf_token %}
+          {{ form.name }}
+          {{ form.age }}
+          </div>
+
+          <input type="submit" name="send" value="Search" class="mt-2 btn btn-primary btn-lg" onclick="myFunction();myFunction2()" id = "test">
+
+        </form>
+      </div>
+      <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5 offset-1 mt-4">
+          <div class="d-none d-md-block">
+            <div class="text-justify text-dark border  pb-3  pt-3 pl-3 pr-3">
+              <b class="">Main idea:</b> <p3 class="">receiving a chain of friends of the messanger "Vkontakte"</p3><br>
+              <b></b><br>
+              <b class="">Module description:</b><p3 class=""> Imagine that you need to somehow reach a person,
+              maybe write to him or just understand the circle of his interests, but besides his account
+              VKontakte social network you have nothing more. This module provides an opportunity
+              building the desired chain.</p3><br>
+            </div>
+
+          </div>
+      </div>
+		</div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-5 offset-1">
+
+      <div class="{{info.color}} mt-2 mb-1 text-center">
+        <h1>{{info.connect}} </h1>
+      </div>
+    </div>
+  </div>
+
+    <div class="row offset-1 mt-4 mb-4">
+
+    {% for part in info.bond %}
+    <div class="col-10 col-sm-10 col-md-5 col-lg-auto col-xl-2 mb-2">
+      <div class="center-cropped"
+        <img  style="background-image: url({{part.link}})">
+      </div>
+      <div class="account">
+        <a href={{part.linkvk}} target="_blank">{{part.fio}}</a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

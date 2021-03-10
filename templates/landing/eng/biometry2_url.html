@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="bg_searchphoto" >
+  <nav class="navbar navbar-expand-md navbar-light sticky-top border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a href="https://brics-russia2020.ru" target="_blank" class="navbar-brad"><img src="static/img/BRICS.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="{% url 'landing' %}" class="nav-link text-center">Main page</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'inform_eng' %}" class="nav-link text-center">Project</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'team_eng' %}" class="nav-link text-center">Team</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'post_edit_eng' %}" class="nav-link text-center">Feedback</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  <div clas="container mt-5">
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <h1 class="">Photo search</h1>
+      </div>
+      <div class="main col-10 col-sm-10 col-md-5 col-lg-4 col-xl-4 offset-1 mt-4">
+        <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.url }}
+
+          <input type="submit" name="send" value="Search" class="mt-2 btn btn-danger">
+        </form>
+      </div>
+      <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5 offset-1 mt-4">
+          <div class="d-none d-md-block">
+            <div class="text-justify text-dark border  pb-3  pt-3 pl-3 pr-3">
+              <b class="">Main idea:</b> <p3 class="">social network account searching by profile photo.</p3><br>
+              <b></b><br>
+              <b class="">Module description:</b><p3 class=""> Sometimes yu need to find information about human or contact with him using only his photo.
+              In these cases it takes service for data searching about human by his photo and this service provided by this module:
+              When you download photo or enter link to the photo you get 20 social network accounts with humans with profile photo like you search. </p3><br>
+            </div>
+
+          </div>
+      </div>
+		</div>
+  </div>
+
+
+    <div class="row offset-1 mt-4 mb-4">
+    {% for part in link_info %}
+    <div class="col-10 col-sm-10 col-md-5 col-lg-auto col-xl-auto mb-2">
+      <p><img src="{{part.face}}" alt="" class="round"></p>
+      <figcaption><a href={{part.profile}} target="_blank" >{{part.first_name}} {{part.last_name}}</a></figcaption>
+      <figcaption><p2>{{part.country}} {{part.city}}</p2></figcaption>
+      <figcaption><p2>{{part.score}}</p2></figcaption>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
